@@ -13,15 +13,15 @@
 
 <body>
     <audio id="bg-music" loop>
-        <source src="audio/Shape-of-My-Heart.mp3" type="audio/mpeg">
+        <source src="audio/Westlife - I Lay My Love on You Lyrics.mp3.mp3" type="audio/mpeg">
     </audio>
 
     <div id="music-popup" class="music-popup">
         <p class="now-playing-top">Now Playing</p>
         <img src="img/D.jpeg" alt="Album Cover" class="album-cover">
         <div class="music-info">
-            <p class="song-title"><span>Shape Of My Heart</span></p>
-            <p class="artist-name">Backstreet Boys</p>
+            <p class="song-title"><span>I Lay My Love on You</span></p>
+            <p class="artist-name">Westlife</p>
         </div>
         <button id="play-pause-btn" class="play-pause-btn" onclick="toggleMusic()">
             <!-- SVG Pause Icon -->
@@ -55,10 +55,9 @@
     <div id="pin-screen" style="display: none;">
         <div class="pin-container glass-panel">
             <h2>Enter PIN</h2>
-            <p style="margin-bottom: 2px; font-size: 0.6rem;">Passwordnya tanggal + bulan jadian kita yaa.</p>
-            <p style="margin-top: 0; font-size: 0.5rem;"> (Awas aja kalau lupa !!)
-            </p>
-            <input type="password" id="pin-input" maxlength="4" placeholder="****">
+            <p style="margin-bottom: 10px; font-size: 0.6rem;">Passwordnya tanggal + bulan + tahun lahir kamu yaa.</p>
+            <input type="password" id="pin-input" maxlength="6" placeholder="******" inputmode="numeric"
+                pattern="[0-9]*">
         </div>
     </div>
 
@@ -85,7 +84,7 @@
             <h1 class="aesthetic-font fade-in-text">Happy Birthday,<br>My Everything</h1>
             <p class="aesthetic-font fade-in-text"
                 style="font-size: 1.3rem; color: #ffffff; margin-top: 15px; margin-bottom: 10px; letter-spacing: 2px;">-
-                Shafira Ainida Nirwana -</p>
+                Attya Kusuma Wardani -</p>
             <img src="img/foto-pacar.png" alt="Foto Pacar" class="birthday-photo fade-in-text">
             <p class="typing-text">Hari ini adalah hari yang paling spesial karena di hari ini, semesta membawa kamu ke
                 dunia.</p>
@@ -123,29 +122,23 @@
             <div class="solar-system">
                 <div class="orbit-track">
 
-                    <div class="planet-card item1" data-caption="Es Teh Solo">
+                    <div class="planet-card item1" data-caption="Coffe">
                         <img src="img/favorite-drink.jpg" alt="Drink">
                         <p class="planet-caption">Your favorite drink</p>
                     </div>
 
-                    <div class="planet-card item2" data-caption="Dubai Chewy Cookie">
+                    <div class="planet-card item2" data-caption="Mie Gacoan">
                         <img src="img/favorite-food.jpg" alt="Food">
                         <p class="planet-caption">Your favorite food</p>
                     </div>
 
-                    <div class="planet-card item3" data-caption="Nadia Omara"
-                        data-embed="https://www.youtube.com/embed/MecNI5vAWmE?si=fcVn3TEBsh5pTRKy">
-                        <img src="img/favorite-yt.jpg" alt="Favorite YT">
+                    <div class="planet-card item3" data-caption="Arabic"
+                        data-embed="https://www.youtube.com/embed/WBAp3C8HfO4?si=xQyuhdxMOZr3l4xN">
+                        <img src="img/favorite-yt.png" alt="Favorite YT">
                         <p class="planet-caption">Your favorite youtube channel</p>
                     </div>
 
-                    <div class="planet-card item4" data-caption="Lalu Biru - Eleanor Whisper"
-                        data-embed="https://open.spotify.com/embed/track/2AVGJteukNmXt6lxPSOz27?utm_source=generator&si=8718c157afbc43c3">
-                        <img src="img/favorite-song.jpg" alt="Favorite Song">
-                        <p class="planet-caption">Your favorite song</p>
-                    </div>
-
-                    <div class="planet-card item5" data-caption="Satrya Marbun">
+                    <div class="planet-card item4" data-caption="Alvin Zilvano">
                         <img src="img/favorite-person.jpeg" alt="Person">
                         <p class="planet-caption">Your favorite person</p>
                     </div>
@@ -233,7 +226,7 @@
             <hr style="border: 0; border-top: 1px solid rgba(255,182,193,0.3); margin-bottom: 20px;">
             <p style="font-size: 0.9rem; opacity: 0.8; margin-bottom: 5px;">Dari orang yang paling bersyukur memilikimu,
             </p>
-            <p class="sender-name aesthetic-font baby-pink-text" style="font-size: 2rem; margin-top: 5px;">Satrya Marbun
+            <p class="sender-name aesthetic-font baby-pink-text" style="font-size: 2rem; margin-top: 5px;">Alvin Zilvano
             </p>
 
             <!-- Tombol Tiup Lilin -->
@@ -266,7 +259,7 @@
                                 <div class="flame-inner"></div>
                             </div>
                             <div class="candle-number-body">
-                                <span class="candle-digit">2</span>
+                                <span class="candle-digit">0</span>
                             </div>
                         </div>
                     </div>

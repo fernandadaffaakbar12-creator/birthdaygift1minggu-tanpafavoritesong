@@ -550,25 +550,21 @@ body {
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
 }
 
-/* Jarak Orbit DIPERBESAR (TranslateZ) agar kartu tidak berdempetan */
+/* Jarak Orbit untuk 4 kartu (90° apart) */
 .item1 {
-    transform: rotateY(0deg) translateZ(340px);
+    transform: rotateY(0deg) translateZ(280px);
 }
 
 .item2 {
-    transform: rotateY(72deg) translateZ(340px);
+    transform: rotateY(90deg) translateZ(280px);
 }
 
 .item3 {
-    transform: rotateY(144deg) translateZ(340px);
+    transform: rotateY(180deg) translateZ(280px);
 }
 
 .item4 {
-    transform: rotateY(216deg) translateZ(340px);
-}
-
-.item5 {
-    transform: rotateY(288deg) translateZ(340px);
+    transform: rotateY(270deg) translateZ(280px);
 }
 
 /* =========================================
@@ -767,7 +763,7 @@ body {
     position: relative;
     flex: 0 0 auto;
     width: 220px;
-    aspect-ratio: 3 / 4;
+    aspect-ratio: 3 / 2;
     border-radius: 10px;
     border: 2px solid rgba(255, 255, 255, 0.3) !important;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5) !important;
@@ -1101,23 +1097,24 @@ body {
 
     /* Menyesuaikan jarak orbit di HP */
     .item1 {
-        transform: rotateY(0deg) translateZ(200px);
+        transform: rotateY(0deg) translateZ(170px);
     }
 
     .item2 {
-        transform: rotateY(72deg) translateZ(200px);
+        transform: rotateY(90deg) translateZ(170px);
     }
 
     .item3 {
-        transform: rotateY(144deg) translateZ(200px);
+        transform: rotateY(180deg) translateZ(170px);
     }
 
     .item4 {
-        transform: rotateY(216deg) translateZ(200px);
+        transform: rotateY(270deg) translateZ(170px);
     }
 
-    .item5 {
-        transform: rotateY(288deg) translateZ(200px);
+    /* Perbesar kartu Core Memories di mobile */
+    .scratch-card {
+        width: 80vw;
     }
 
     #main-content {
