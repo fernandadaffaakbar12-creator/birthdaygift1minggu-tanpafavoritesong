@@ -175,7 +175,7 @@
         const pinPopupClose = document.getElementById('pin-popup-close');
 
         // DEFAULT PIN: Silakan ubah angka ini jika ingin PIN lain
-        const SECRET_PIN = "220906";
+        const SECRET_PIN = "0906";
 
         let pinAttempt = 0;
         let popupTimeout = null;
@@ -281,7 +281,7 @@
 
         if (pinInput) {
             pinInput.addEventListener('input', function () {
-                if (pinInput.value.length === 6) {
+                if (pinInput.value.length === SECRET_PIN.length) {
                     // Delay sedikit agar digit terakhir terasa diketik
                     setTimeout(() => {
                         if (pinInput.value === SECRET_PIN) {
@@ -427,13 +427,15 @@ document.addEventListener("DOMContentLoaded", function () {
                     if (this.classList.contains('polaroid-portrait')) {
                         modalImg.style.aspectRatio = "9 / 16";
                     } else {
-                        modalImg.style.aspectRatio = "1 / 1";
+                        modalImg.style.aspectRatio = "3 / 4";
                     }
                 }
                 // D. JIKA YANG DIKLIK ADALAH GALERI CINTA
                 else {
                     modalImg.src = this.src;
-                    modalImg.style.aspectRatio = "9 / 16";
+                    // Ikuti rasio kartu: foto 4-6 (portrait) 9:16, foto 1-3 3:2
+                    const kartu = this.closest('.scratch-card');
+                    modalImg.style.aspectRatio = (kartu && kartu.classList.contains('portrait')) ? "9 / 16" : "3 / 2";
                 }
 
                 modal.classList.add('show-modal');
@@ -778,8 +780,15 @@ document.addEventListener('DOMContentLoaded', () => {
         let drawMoveCount = 0;
 
         setTimeout(() => {
-            canvas.width = 220;
-            canvas.height = Math.round(220 * 2 / 3);
+            // Resolusi internal canvas mengikuti rasio kartu (3:2 atau 9:16 portrait)
+            const isPortrait = canvas.parentElement && canvas.parentElement.classList.contains('portrait');
+            if (isPortrait) {
+                canvas.width = 225;
+                canvas.height = 400;
+            } else {
+                canvas.width = 300;
+                canvas.height = 200;
+            }
 
             ctx.fillStyle = '#0a0a0a';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -824,8 +833,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
 
                 const canvasRect = canvas.getBoundingClientRect();
-                const x = clientX - canvasRect.left;
-                const y = clientY - canvasRect.top;
+                // Skalakan posisi layar ke resolusi internal canvas
+                const x = (clientX - canvasRect.left) * (canvas.width / canvasRect.width);
+                const y = (clientY - canvasRect.top) * (canvas.height / canvasRect.height);
 
                 ctx.lineWidth = brushRadius * 2;
                 ctx.lineCap = 'round';

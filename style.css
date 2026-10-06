@@ -688,6 +688,7 @@ body {
 ========================================= */
 .gallery-scroll {
     display: flex;
+    align-items: center;
     gap: 15px;
     overflow-x: hidden;
     padding: 20px 10px;
@@ -776,6 +777,12 @@ body {
 .scratch-card:nth-child(even) {
     animation-delay: 1s;
     animation-duration: 5s;
+}
+
+/* Foto 4-6: rasio portrait 9:16 */
+.scratch-card.portrait {
+    width: 220px;
+    aspect-ratio: 9 / 16;
 }
 
 .scratch-card:hover {
@@ -1114,7 +1121,12 @@ body {
 
     /* Perbesar kartu Core Memories di mobile */
     .scratch-card {
-        width: 80vw;
+        width: 82vw;
+    }
+
+    /* Portrait 9:16 di mobile: besar, tapi tetap muat di tinggi layar */
+    .scratch-card.portrait {
+        width: min(72vw, calc(72vh * 9 / 16));
     }
 
     #main-content {
